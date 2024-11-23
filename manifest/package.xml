@@ -33,7 +33,15 @@
         <name>StaticResource</name>
     </types>
       <types>
-        <members>*</members>
+        <members>Applicant__c</members>
+        <members>Demo__c</members>
+        <members>Interviewer__c</members>
+        <members>Job_Application__c</members>
+        <members>MyCustomObject__c</members>
+        <members>Position__c</members>
+        <members>Project__c</members>
+        <members>Student__c</members>
+        <members>Test__c</members>
         <name>CustomObject</name>
     </types>
     <version>62.0</version>
