@@ -25,9 +25,9 @@ node {
 
         // Debugging: List the contents of the checked-out directory
         if (isUnix()) {
-            sh 'ls -la force-app/main/default/objects/'
+            sh 'ls -la'
         } else {
-            bat 'dir force-app\\main\\default\\objects\\'
+            bat 'dir'
         }
     }
 
@@ -64,9 +64,9 @@ node {
             // Deploy metadata to Dev2
             def rmsg
             if (isUnix()) {
-                rmsg = sh returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d force-app/main/default -u ${DEV2_HUB_ORG} -w 10"
+                rmsg = sh returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d manifest -u ${DEV2_HUB_ORG} -w 10"
             } else {
-                rmsg = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:deploy -d force-app\\main\\default -u ${DEV2_HUB_ORG} -w 10"
+                rmsg = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:deploy -d manifest -u ${DEV2_HUB_ORG} -w 10"
             }
 
             println rmsg
@@ -98,9 +98,9 @@ node {
             // Deploy metadata to Test2
             def rmsg
             if (isUnix()) {
-                rmsg = sh returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d force-app/main/default -u ${TEST2_HUB_ORG} -w 10"
+                rmsg = sh returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d manifest -u ${TEST2_HUB_ORG} -w 10"
             } else {
-                rmsg = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:deploy -d force-app\\main\\default -u ${TEST2_HUB_ORG} -w 10"
+                rmsg = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:deploy -d manifest -u ${TEST2_HUB_ORG} -w 10"
             }
 
             println rmsg
