@@ -56,9 +56,9 @@ node {
 
             // List the contents of the objects directory
             if (isUnix()) {
-                sh 'ls -la force-app/main/default/objects/'
+                sh 'ls -la force-app/main/default/'
             } else {
-                bat 'dir force-app\\main\\default\\objects\\'
+                bat 'dir force-app\\main\\default\\'
             }
 
             // Deploy metadata to Dev1
@@ -89,7 +89,7 @@ node {
             // Check if MyCustomObject__c.object file exists
             def objectFileExists
             if (isUnix()) {
-                objectFileExists = sh returnStatus: true, script: "test -f force-app/main/default/objects/MyCustomObject__c.object"
+                objectFileExists = sh returnStatus: true, script: "test -f force-app/main/default"
             } else {
                 objectFileExists = bat returnStatus: true, script: "if exist force-app\\main\\default\\objects\\MyCustomObject__c.object (exit 0) else (exit 1)"
             }
