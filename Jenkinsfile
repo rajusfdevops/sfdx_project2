@@ -22,6 +22,13 @@ node {
     stage('Checkout Source') {
         // When running in multi-branch job, one must issue this command
         checkout scm
+
+        // Debugging: List the contents of the checked-out directory
+        if (isUnix()) {
+            sh 'ls -la force-app/main/default/objects/'
+        } else {
+            bat 'dir force-app\\main\\default\\objects\\'
+        }
     }
 
     // Debugging: Print the credentials IDs to ensure they are set
