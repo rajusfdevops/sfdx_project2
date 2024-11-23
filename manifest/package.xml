@@ -9,8 +9,7 @@
         <name>ApexComponent</name>
     </types>
     <types>
-        <members>PairNumbers</members>
-        <members>Demo</members>
+        <members>*</members>
         <name>ApexPage</name>
     </types>
     <types>
