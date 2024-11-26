@@ -26,8 +26,10 @@ node {
         // Debugging: List the contents of the checked-out directory
         if (isUnix()) {
             sh 'ls -la'
+            sh 'ls -la force-app/main/default/objects/'
         } else {
             bat 'dir'
+            bat 'dir force-app\\main\\default\\objects\\'
         }
     }
 
@@ -56,9 +58,9 @@ node {
 
             // List the contents of the objects directory
             if (isUnix()) {
-                sh 'ls -la force-app/main/default/'
+                sh 'ls -la force-app/main/default/objects/'
             } else {
-                bat 'dir force-app\\main\\default\\'
+                bat 'dir force-app\\main\\default\\objects\\'
             }
 
             // Deploy metadata to Dev1
