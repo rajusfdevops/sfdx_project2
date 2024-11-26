@@ -68,9 +68,9 @@ node {
             // Deploy metadata to Dev1
             def rmsg
             if (isUnix()) {
-                rmsg = sh returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d force-app/main/default -u ${DEV1_HUB_ORG} -w 10"
+                rmsg = sh returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d manifest -u ${DEV1_HUB_ORG} -w 10"
             } else {
-                rmsg = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:deploy -d force-app\\main\\default -u ${DEV1_HUB_ORG} -w 10"
+                rmsg = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:deploy -d manifest -u ${DEV1_HUB_ORG} -w 10"
             }
 
             println rmsg
@@ -102,9 +102,9 @@ node {
             // Deploy metadata to Test1
             def rmsg
             if (isUnix()) {
-                rmsg = sh returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d force-app/main/default -u ${TEST1_HUB_ORG} -w 10"
+                rmsg = sh returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d manifest -u ${TEST1_HUB_ORG} -w 10"
             } else {
-                rmsg = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:deploy -d force-app\\main\\default -u ${TEST1_HUB_ORG} -w 10"
+                rmsg = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:deploy -d manifest -u ${TEST1_HUB_ORG} -w 10"
             }
 
             println rmsg
