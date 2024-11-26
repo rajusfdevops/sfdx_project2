@@ -89,7 +89,7 @@ node {
             // Check if MyCustomObject__c.object file exists
             def objectFileExists
             if (isUnix()) {
-                objectFileExists = sh returnStatus: true, script: "test -f force-app/main/default"
+                objectFileExists = sh returnStatus: true, script: "test -f force-app/main/default/objects/MyCustomObject__c.object"
             } else {
                 objectFileExists = bat returnStatus: true, script: "if exist force-app\\main\\default\\objects\\MyCustomObject__c.object (exit 0) else (exit 1)"
             }
